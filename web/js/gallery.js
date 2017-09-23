@@ -1,0 +1,1 @@
+$("#pinBoot").mpmansory();
