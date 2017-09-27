@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\Album;
+use app\models\Art;
 use app\models\Blog;
 use app\models\Sections;
 use Yii;
@@ -222,4 +223,52 @@ class SiteController extends Controller
 
         return $this->render('gallery', ['album' => $album]);
     }
+
+    /**
+     * @param int $id
+     * @return string
+     */
+    public function actionArts($id = 0)
+    {
+
+//        $album = (new \yii\db\Query())
+//            ->select('album.*, src')
+//            ->from('album')
+//            ->leftJoin('art', 'album.art_id = art.id')
+//            ->where(['album.visible' => 1])
+//            ->all();
+//
+//        $art = (new \yii\db\Query())
+//            ->select('art.*')
+//            ->from('art');
+//        if ($id != 0) {
+//            $art = $art->where('album_id = :id')
+//                ->addParams(['id' => $id]);}
+//        $art = $art->orderBy(['update_at' => SORT_DESC])
+//            ->all();
+
+
+        $album = (new \yii\db\Query())
+            ->select('album.*, src')
+            ->from('album')
+            ->leftJoin('art', 'album.art_id = art.id')
+            ->where(['album.visible' => 1])
+            ->all();
+
+        $art = (new \yii\db\Query())
+            ->select('art.*')
+            ->from('art');
+        if ($id != 0) {
+            $art = $art->where('album_id = :id')
+                ->addParams(['id' => $id]);}
+        $art = $art->orderBy(['update_at' => SORT_DESC])
+            ->all();
+
+
+
+
+        return $this->render('arts', ['art' => $art, 'album' => $album]);
+    }
+
+
 }

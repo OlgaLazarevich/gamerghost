@@ -6,6 +6,7 @@
  */
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 
@@ -26,13 +27,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="container-fluid r">
 
         <div class="container">
-            <section class="container">
-                <div class="page-header">
-                    <h1>Material cards<br>
-                        <small>material cards with a simple jquery script</small></h1>
+            <section class="container gg">
 
-
-                </div>
                 <div class="row active-with-click">
                     <?php foreach ($album as $item): ?>
                         <div class="col-md-4 col-sm-6 col-xs-12">
@@ -40,13 +36,13 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <h2>
                                     <span><?= $item['name'] ?></span>
                                     <strong>
-                                        <a href="/gallery/<?= $item['id'] ?>" class="a-gall">Перейти к галерее</a>
+                                        <a href="<?= Url::toRoute(['site/arts','id'=>$item['id']]); ?>" class="a-gall">Перейти к галерее</a>
                                     </strong>
                                 </h2>
                                 <div class="mc-content">
                                     <div class="img-container">
 
-                                        <img class="img-responsive" src="img/<?= $item['src'] ?>">
+                                        <img class="img-responsive" src="/img/<?= $item['src'] ?>">
                                     </div>
                                     <div class="mc-description">
                                         <?= $item['description']; ?>

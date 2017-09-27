@@ -42,12 +42,12 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="c">VK</div>
         <i class="fa fa-vk"></i>
     </div>
-    <div class='map map-5' style="background-image:url('images/2.png')">
+    <div class='map map-5' style="background-image:url('images/22.png')">
         <div class="c">FACEBOOK</div>
         <i class="fa fa-facebook-square" ></i>
     </div>
 
-    <div class='map map-4' style="background-image:url('images/1.png')">
+    <div class='map map-4' style="background-image:url('images/11.png')">
         <div class="c">TWITTER</div>
         <i class="fa fa-twitter-square" ></i>
     </div>

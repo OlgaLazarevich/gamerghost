@@ -59,22 +59,24 @@ NavBar::begin([
         'class' => 'navbar navbar-default menu',
     ],
 ]);
-echo Nav::widget([
+echo Nav::widget(array(
     'encodeLabels' => false,
-    'options' => [
+    'options' => array(
         'class' => 'nav navbar-nav',
 //        'id' => 'bs-example-navbar-collapse-1'
-    ],
-    'items' => [
+    ),
+    'items' => array(
         '<li class="active text-center"><img src="/images/ghost.png" alt="logo"></li>',
 //        ['label' => Html::img('./images/ghost.png'), 'options' => ['class' => 'active text-center']],
-        ['label' => 'Главная', 'url' => ['/'], 'options' => ['class' => 'active']],
-        ['label' => 'Обо мне', 'url' => ['/about']],
-        ['label' => 'Галерея', 'url' => ['/gallery']],
-        ['label' => 'Блог', 'url' => ['/blog']],
-        ['label' => 'Контакты', 'url' => ['/contact']],
-    ],
-]);
+        array('label' => 'Главная', 'url' => array('/'), 'options' => array('class' => 'active')),
+        array('label' => 'Обо мне', 'url' => array('/about')),
+        array('label' => 'Галерея', 'url' => array('/gallery')),
+        array('label' => 'Блог', 'url' => array('/blog')),
+        array('label' => 'Контакты', 'url' => array('/contact')),
+
+    ),
+//    'activeCssClass' => 'active',
+));
 NavBar::end();
 ?>
 

@@ -8,6 +8,7 @@
 
 use mihaildev\ckeditor\CKEditor;
 use yii\helpers\Html;
+use yii\helpers\Url;
 
 
 $this->title = 'Главная';
@@ -98,7 +99,7 @@ $this->title = 'Главная';
                             <h2>
                                 <span><?= $item['name'] ?></span>
                                 <strong>
-                                    <a href="/gallery/<?= $item['id'] ?>" class="a-gall">Перейти к галерее</a>
+                                    <a href="<?= Url::toRoute(['site/arts','id'=>$item['id']]); ?>" class="a-gall">Перейти к галерее</a>
                                 </strong>
                             </h2>
                             <div class="mc-content">
@@ -116,7 +117,7 @@ $this->title = 'Главная';
                                 <h4>
                                     <?= $item['name'] ?>
                                 </h4>
-                                <a class="fa fa-fw fa-facebook text-center" href="/gallery/<?= $item['id'] ?>"></a>
+                                <a class="fa fa-fw fa-facebook text-center" href="<?= Url::toRoute(['site/arts','id'=>$item['id']]); ?>"></a>
 
                             </div>
                         </article>
@@ -133,21 +134,19 @@ $this->title = 'Главная';
 
                     <?php foreach ($blog as $item): ?>
 
-
-
-                    <div class="col-md-4">
-                        <div class="single-blog-item">
-                            <div class="blog-thumnail">
-                                <a href=""><img src="img/blog/2.jpg" alt="blog-img"></a>
+                        <div class="col-md-4">
+                            <div class="single-blog-item">
+                                <div class="blog-thumnail">
+                                    <a href=""><img src="/img/blog/2.jpg" alt="blog-img"></a>
+                                </div>
+                                <div class="blog-content">
+                                    <h4><a href="<?= Url::toRoute(['site/post','id'=>$item['id']]); ?>"><?= $item['name'] ?></a></h4>
+                                    <p><?= $item['description'] ?></p>
+                                    <a href="<?= Url::toRoute(['site/post','id'=>$item['id']]); ?>" class="more-btn">Читать</a>
+                                </div>
+                                <span class="blog-date"><?= $item['date'] ?></span>
                             </div>
-                            <div class="blog-content">
-                                <h4><a href="#"><?= $item['name'] ?></a></h4>
-                                <p><?= $item['description'] ?></p>
-                                <a href="" class="more-btn">Читать</a>
-                            </div>
-                            <span class="blog-date"><?= $item['date'] ?></span>
                         </div>
-                    </div>
                     <?php endforeach; ?>
 <!--                    <div class="col-md-4">-->
 <!--                            <div class="single-blog-item">-->

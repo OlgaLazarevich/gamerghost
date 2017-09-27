@@ -34,6 +34,8 @@ body {
     width: 100%;
 }
 
+
+
 .r {
     widows: 100%;
     margin: 0;
@@ -155,7 +157,8 @@ body {
     background-image: url(../images/L0WhbsKkL2E.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
-
+    position: relative;
+    z-index: 50;
     background-attachment:fixed;
     padding: 2%;
 }
@@ -184,6 +187,8 @@ body {
 
 .fon-footer {
     background-image: url(../images/footer-bg.png);
+    position: relative;
+    z-index: 100;
 }
 
 .fon-forest {
@@ -443,18 +448,23 @@ h4 {
 
 .g-menu li {
     display: inline-block;
-    padding: 0px 5%;
+    padding: 7px 5%;
 }
 
 .g-menu li a {
     text-decoration: none;
     color: #999999;
     font-family: hard;
-    font-size: 14px;
+    font-size: 16px;
+    padding:5px 8px  ;
+    border: 1px solid #181818;
+    border-radius: 30px;
 }
 
 .g-menu li a:hover {
     color: #cfaa34;
+    border: 1px solid #cfaa34;
+    border-radius: 30px;
 }
 
 .g-menu .act a {
@@ -486,10 +496,10 @@ h4 {
 }
 
 .book {
-    width: calc(100% + 13.8%);
+    height: 200px;
+    width: calc(100% + 9%);
     color: dimgray;
-
-    background-image: url(../images/karandashi-cvetnye-risovanie-2814.jpg);
+    background-image: url(../images/rrr.png);
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center ;
@@ -506,6 +516,7 @@ h4 {
     background-image: url(../images/black-edge-top-light.png);
     background-repeat: repeat-x;
     position: relative;
+    top: 180px;
 }
 
 .book::before {
@@ -519,6 +530,12 @@ h4 {
     top: -4px;
 }
 
+.cit p{color: lightgrey;}
+.cit .text-center{color:gray;
+    font-family: hard;}
+
+.cit h3{color: #cfaa34;
+    font-family: g;}
 
 /*
 Fade content bs-carousel with hero headers
@@ -841,10 +858,10 @@ Image credits: unsplash.com
 
 .cont i {
     display: block;
-    width: 60px;
-    height: 60px;
+    width: 63px;
+    height: 63px;
     padding: auto;
-    padding-top: 11px;
+    padding-top: 13px;
     box-sizing: border-box;
     color: white;
     background-color: black;
@@ -1485,4 +1502,41 @@ Image credits: unsplash.com
 
 
 
+
+
+.g img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.g img:hover {border: 1px}
+
+.g .item { margin: 5px 0px;}
+
+
+
+
+.white-panel {
+    position: absolute;
+    background: #eee;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+
+}
+
+
+.white-panel h1 {
+    font-size: 1em;
+}
+.white-panel h1 a {
+    color: #A92733;
+}
+.white-panel:hover {
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    margin-top: -5px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
 
