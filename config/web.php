@@ -7,6 +7,11 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'modules' => [
+        'admin' => [
+            'class' => 'app\modules\admin\Module',
+        ],
+    ],
     'components' => [
         'assetManager' => [
             'bundles' => [
@@ -68,7 +73,7 @@ $config = [
                 'site/<action:\w+>/<id:\d+>' => 'site/<action>',
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
-                
+                '<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
                 '/admin/<controller:\w+>/<action:\w+>' => '<controller>/<action>',
                 '/admin/<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>'
 //                'ghost/blog/<id:\d+>' => 'site/blog'
