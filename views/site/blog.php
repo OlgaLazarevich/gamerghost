@@ -10,6 +10,7 @@ use yii\helpers\Url;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 use \yii\web\UrlManager;
+use yii\widgets\LinkPager;
 
 
 $this->title = 'Блог';
@@ -35,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <a href="/blog/<?= $item['id'] ?>"><?= $item['name'] ?></a>
                 <?php endforeach; ?>
             </div>
-            <?php foreach ($blog as $item): ?>
+            <?php foreach ($articles as $item): ?>
 
 
                 <div class="col-md-4">
@@ -52,8 +53,12 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
                 </div>
             <?php endforeach; ?>
-            
-
+            <div class="col-md-12 text-center">
+            <?php echo LinkPager::widget([
+                'pagination' => $pagination,
+                'registerLinkTags' => true
+            ]);?>
+            </div>
         </div>
     </div>
 </div>

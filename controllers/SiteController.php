@@ -16,6 +16,7 @@ use app\models\ContactForm;
 use app\models\Helga;
 use app\models\DataForm;
 use app\component\ImageHelper;
+use yii\data\Pagination;
 
 
 
@@ -170,27 +171,52 @@ class SiteController extends Controller
 
     public function actionBlog($id = 0)
     {
-        $blog = (new \yii\db\Query())
-            ->select('blog.*')
-            ->from('blog');
-        if ($id != 0) {
-            $blog = $blog->where('section_id = :id')
-                ->addParams(['id' => $id]);
-        }
+//        $blog = (new \yii\db\Query())
+//            ->select('blog.*')
+//            ->from('blog');
+//        if ($id != 0) {
+//            $blog = $blog->where('section_id = :id')
+//                ->addParams(['id' => $id]);
+//        }
+//
+//
+//        $blog = $blog->orderBy(['date' => SORT_DESC])
+//            ->all();
+//
+//        $sections = (new \yii\db\Query())
+//            ->select('sections.*')
+//            ->from(Sections::tableName())
+//            ->all();
+//
+//
+            $blog = (new \yii\db\Query())
+                ->select('blog.*')
+                ->from('blog');
+            if ($id != 0) {
+                $blog = $blog->where('section_id = :id')
+                    ->addParams(['id' => $id]);
+            }
+
+        $count = $blog->count();
+
+        $pagination = new Pagination(['totalCount' => $count, 'pageSize' => 2]);
 
 
-        $blog = $blog->orderBy(['date' => SORT_DESC])
-            ->all();
+            $articles = $blog->offset($pagination->offset)
+                ->limit($pagination->limit)
+                ->orderBy(['date' => SORT_DESC])
+                ->all();
 
-        $sections = (new \yii\db\Query())
-            ->select('sections.*')
-            ->from(Sections::tableName())
-            ->all();
+            $sections = (new \yii\db\Query())
+                ->select('sections.*')
+                ->from(Sections::tableName())
+                ->all();
 
 
 
-
-        return $this->render('blog', ['blog' => $blog, 'sections' => $sections]);
+        return $this->render('blog', ['articles' => $articles,
+            'sections' => $sections,
+            'pagination' => $pagination]);
     }
 
     public function actionPost($id)
