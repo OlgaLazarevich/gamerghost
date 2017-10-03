@@ -1509,3 +1509,53 @@ Image credits: unsplash.com
     transition: all 0.3s ease-in-out;
 }
 
+/* пагинация */
+
+.pagination>li> a{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  border: 4px #cfaa34 solid;
+    margin: 5px;}
+
+.pagination>li.active>a, .pagination>li.active>span {border: 4px #68551A solid;
+background: #68551A;}
+.pagination>li.active>a:hover, .pagination>li.active>span:hover {border: 4px #68551A solid;
+    background: #68551A;
+    color: white;}
+
+.pagination>li> a:hover,
+.pagination>li.disabled>a:hover,
+.pagination>li.active>span:hover
+{border: 4px #68551A solid;
+background: #68551A;
+color: white;}
+
+.pagination>li.disabled>span, .pagination>li:last-child>span, .pagination>li:last-child>a, .pagination>li:last-child>span,
+.pagination>li:first-child>a, .pagination>li:first-child>span{
+
+      width: 50px;
+      height: 40px;
+    border-radius: 0;
+      margin: 5px;}
+
+
+
+
+.pagination>li>a, .pagination>li>span {background-color:  #cfaa34;
+    background-image: none;
+    color: white;
+    text-shadow: none;
+    font-family: g;}
+
+.pagination>li.disabled>a, .pagination>li.disabled>a:hover,
+.pagination>li.disabled>span, .pagination>li.disabled>span:hover {background-color:  #cfaa34;
+    background-image: none;
+    color: white;
+    text-shadow: none;
+    font-family: g;}
+
+
+
+.pagination>li.disabled>span {background-color: #867748; border: 4px #867748 solid;}
+.pagination>li.disabled>span:hover {background-color: #867748; border: 4px #867748 solid;}

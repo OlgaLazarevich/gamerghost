@@ -9,6 +9,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
+use yii\widgets\LinkPager;
 
 $this->title = 'Галерея';
 $this->params['breadcrumbs'][] = $this->title;
@@ -55,7 +56,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <!--<div class="row">-->
             <section id="pinBoot">
 
-                <?php foreach ($art as $item): ?>
+                <?php foreach ($articles as $item): ?>
 
                     <div class="item">
                         <a data-fancybox="gallery" href="/img/<?= $item['src'] ?>">
@@ -65,53 +66,17 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <?php endforeach; ?>
 
-<!--                <div class="item">-->
-<!--                    <a data-fancybox="gallery" href="/img/doctor.jpg">-->
-<!--                        <img src="/img/doctor.jpg" alt="1">-->
-<!--                    </a>-->
-<!--                </div>-->
-<!---->
-<!---->
-<!--                <div class="item">-->
-<!--                    <a data-fancybox="gallery" href="imggal/1.jpg">-->
-<!--                        <img src="http://via.placeholder.com/350x150" alt="1">-->
-<!--                    </a>-->
-<!--                </div>-->
-<!--                <div class="item">-->
-<!--                    <a data-fancybox="gallery" href="http://via.placeholder.com/3500x2000" title="test">-->
-<!--                        <img src="http://via.placeholder.com/350x200" alt="2" title="test">-->
-<!--                    </a>-->
-<!--                </div>-->
-<!--                <div class="item">-->
-<!--                    <a data-fancybox="gallery" href="http://via.placeholder.com/3500x2000" title="test">-->
-<!--                        <img src="http://via.placeholder.com/350x200" alt="2" title="test">-->
-<!--                    </a>-->
-<!--                </div>-->
-<!--                <div class="item">-->
-<!--                    <a data-fancybox="gallery" href="http://via.placeholder.com/3500x2000" title="test">-->
-<!--                        <img src="http://via.placeholder.com/350x200" alt="2" title="test">-->
-<!--                    </a>-->
-<!--                </div>-->
-<!--                <div class="item">-->
-<!--                    <a data-fancybox="gallery" href="http://via.placeholder.com/3500x2000" title="test">-->
-<!--                        <img src="http://via.placeholder.com/350x200" alt="2" title="test">-->
-<!--                    </a>-->
-<!--                </div>-->
-<!--                <div class="item"><img src="http://via.placeholder.com/350x300" alt="3"></div>-->
-<!--                <div class="item"><img src="http://via.placeholder.com/300x250" alt="4"></div>-->
-<!--                <div class="item"><img src="http://via.placeholder.com/350x150" alt="5"></div>-->
-<!--                <div class="item"><img src="http://via.placeholder.com/300x150" alt="6"></div>-->
-<!--                <div class="item"><img src="http://via.placeholder.com/350x100" alt="7"></div>-->
-<!--                <div class="item"><img src="http://via.placeholder.com/300x150" alt="8"></div>-->
-<!--                <div class="item"><img src="http://via.placeholder.com/350x150" alt="9"></div>-->
-<!--                <div class="item"><img src="http://via.placeholder.com/350x150" alt="10"></div>-->
+
 
             </section>
             <hr>
         </div>
-
-        <!--</div>-->
-        <!--</div>-->
+        <div class="col-md-12 text-center">
+            <?php echo LinkPager::widget([
+                'pagination' => $pagination,
+                'registerLinkTags' => true
+            ]);?>
+        </div>
     </div>
 </section>
 

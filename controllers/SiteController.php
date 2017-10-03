@@ -276,6 +276,24 @@ class SiteController extends Controller
 //            ->all();
 
 
+//        $album = (new \yii\db\Query())
+//            ->select('album.*, src')
+//            ->from('album')
+//            ->leftJoin('art', 'album.art_id = art.id')
+//            ->where(['album.visible' => 1])
+//            ->all();
+//
+//        $art = (new \yii\db\Query())
+//            ->select('art.*')
+//            ->from('art');
+//        if ($id != 0) {
+//            $art = $art->where('album_id = :id')
+//                ->addParams(['id' => $id]);}
+//        $art = $art->orderBy(['update_at' => SORT_DESC])
+//            ->all();
+
+
+
         $album = (new \yii\db\Query())
             ->select('album.*, src')
             ->from('album')
@@ -289,13 +307,21 @@ class SiteController extends Controller
         if ($id != 0) {
             $art = $art->where('album_id = :id')
                 ->addParams(['id' => $id]);}
-        $art = $art->orderBy(['update_at' => SORT_DESC])
+
+        $count = $art->count();
+
+        $pagination = new Pagination(['totalCount' => $count, 'pageSize' => 10]);
+
+
+        $articles = $art->offset($pagination->offset)
+            ->limit($pagination->limit)
+            ->orderBy(['update_at' => SORT_DESC])
             ->all();
 
 
 
 
-        return $this->render('arts', ['art' => $art, 'album' => $album]);
+        return $this->render('arts', ['articles' => $articles, 'album' => $album, 'pagination' => $pagination]);
     }
 
 
