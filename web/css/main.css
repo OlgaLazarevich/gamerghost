@@ -242,6 +242,7 @@ body {
 
 .cop h5 {
     padding-top: 15px;
+    text-shadow: none;
 }
 
 .footer .f-logo>p,
@@ -251,45 +252,13 @@ body {
     color: #eeeeee;
 }
 
-.i {
-    display: inline-block;
-    height: 29px;
-    width: 29px;
-    background-image: url(../images/icon.png);
-    margin-left: 5px;
-}
+.iii {padding: 15px;}
+.iii a {color: gray;
+    text-decoration: none;
+    font-size: 23pt;
+    padding-left: 6px;}
 
-.i-f {
-    background-position: -36px 0px;
-}
-
-.i-f:hover {
-    background-position: -0px 0px;
-}
-
-.i-v {
-    background-position: -37px -30px;
-}
-
-.i-v:hover {
-    background-position: 0px -30px;
-}
-
-.i-i {
-    background-position: -37px -60px;
-}
-
-.i-i:hover {
-    background-position: 0px -60px;
-}
-
-.i-t {
-    background-position: -37px -90px;
-}
-
-.i-t:hover {
-    background-position: 0px -90px;
-}
+.iii a:hover {color: #cfaa34;}
 
 
 /* галлерея*/

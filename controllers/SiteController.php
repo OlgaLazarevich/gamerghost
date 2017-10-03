@@ -18,6 +18,8 @@ use app\models\DataForm;
 use app\component\ImageHelper;
 
 
+
+
 class SiteController extends Controller
 {
     /**
@@ -143,15 +145,13 @@ class SiteController extends Controller
      */
     public function actionContact()
     {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
+//        $model = new ContactForm();
+//        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
+//            Yii::$app->session->setFlash('contactFormSubmitted');
 
-            return $this->refresh();
-        }
-        return $this->render('contact', [
-            'model' => $model,
-        ]);
+//            return $this->refresh();
+//        }
+        return $this->render('contact');
     }
 
     /**
@@ -186,6 +186,8 @@ class SiteController extends Controller
             ->select('sections.*')
             ->from(Sections::tableName())
             ->all();
+
+
 
 
         return $this->render('blog', ['blog' => $blog, 'sections' => $sections]);

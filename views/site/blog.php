@@ -11,6 +11,7 @@ use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 use \yii\web\UrlManager;
 
+
 $this->title = 'Блог';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -51,7 +52,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
                 </div>
             <?php endforeach; ?>
+            
 
         </div>
     </div>
-</div></div>
+</div>

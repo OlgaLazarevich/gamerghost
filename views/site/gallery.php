@@ -13,22 +13,14 @@ use yii\captcha\Captcha;
 $this->title = 'Галерея';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-
 <div class="n"> <ul>
-        <li><a href="index.html">главная</a></li> /
-        <li><a href="gallery.html">галерея</a></li>
+        <li><a href="<?= Url::toRoute(['/']); ?>">главная</a></li> /
+        <li><a href="<?= Url::toRoute(['site/gallery']); ?>">галерея</a></li>
     </ul></div>
-
-
-
-
 <div class="main-2 ">
-
     <div class="container-fluid r">
-
         <div class="container">
             <section class="container gg">
-
                 <div class="row active-with-click">
                     <?php foreach ($album as $item): ?>
                         <div class="col-md-4 col-sm-6 col-xs-12">
@@ -55,28 +47,16 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <h4>
                                         <?= $item['name'] ?>
                                     </h4>
-                                    <a class="fa fa-fw fa-facebook text-center" href="/gallery/<?= $item['id'] ?>">&#9658;</a>
-
+                                    <a class="text-center" href="<?= Url::toRoute(['site/arts','id'=>$item['id']]); ?>">&#9658;</a>
                                 </div>
                             </article>
                         </div>
                     <?php endforeach; ?>
-
-
-
-
                 </div>
-
-
-
             </section>
         </div>
-
-
     </div>
-
 </div>
-
 <script>
     function ready() {
         $(function () {
@@ -109,8 +89,5 @@ $this->params['breadcrumbs'][] = $this->title;
             });
         });
     }
-
     document.addEventListener("DOMContentLoaded", ready);
-
-
 </script>

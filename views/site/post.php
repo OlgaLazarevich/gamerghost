@@ -5,6 +5,7 @@
 /* @var $model app\models\ContactForm */
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 
@@ -15,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="n">
         <ul>
-            <li><a href="index.html">главная</a></li> /
+            <li><a href="<?= Url::toRoute(['/']); ?>">главная</a></li> /
             <li><a href="blog.html">блог</a></li> /
             <li><a href="b-1.html">статья </a></li>
         </ul>

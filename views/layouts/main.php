@@ -9,6 +9,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use yii\helpers\Url;
 
 AppAsset::register($this);
 ?>
@@ -100,19 +101,19 @@ NavBar::end();
                                 <p>gamer<span>Ghost</span> art</p>
                             </div>
                             <div class="col-md-12">
-                                <a href="index.html">главная</a>
+                                <a href="<?= Url::toRoute(['/']); ?>">главная</a>
                             </div>
                             <div class="col-md-12">
-                                <a href="#">обо мне</a>
+                                <a href="<?= Url::toRoute(['site/about']); ?>">обо мне</a>
                             </div>
                             <div class="col-md-12">
-                                <a href="gallery.html">галерея</a>
+                                <a href="<?= Url::toRoute(['site/gallery']); ?>">галерея</a>
                             </div>
                             <div class="col-md-12">
-                                <a href="blog.html">блог</a>
+                                <a href="<?= Url::toRoute(['site/blog']); ?>">блог</a>
                             </div>
                             <div class="col-md-12">
-                                <a href="contact.html">kонтакты</a></div>
+                                <a href="<?= Url::toRoute(['site/contact']); ?>">kонтакты</a></div>
                         </div>
                     </div>
 
@@ -122,11 +123,11 @@ NavBar::end();
                                 <p class="seti">Ccылки на социальные сети:</p>
                             </div>
 
-                            <div class="col-md-12">
-                                <a href="#" class="i i-v"></a>
-                                <a href="#" class="i i-f"></a>
-                                <a href="#" class="i i-i"></a>
-                                <a href="#" class="i i-t"></a>
+                            <div class='iii'>
+                                <a href="#" class="fa fa-facebook-square"></a>
+                                <a href="#" class="fa fa-instagram"></a>
+                                <a href="#" class="fa fa-twitter"></a>
+                                <a href="#" class="fa fa-vk"></a>
                             </div>
                         </div>
 

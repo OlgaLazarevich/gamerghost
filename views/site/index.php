@@ -91,7 +91,7 @@ $this->title = 'Главная';
 
 
             <h1>мои работы</h1>
-            <h3>хочу познакомить вас с моим творчеством.</h3>
+
             <div class="row active-with-click">
                 <?php foreach ($album as $item): ?>
                     <div class="col-md-4 col-sm-6 col-xs-12">
@@ -117,8 +117,7 @@ $this->title = 'Главная';
                                 <h4>
                                     <?= $item['name'] ?>
                                 </h4>
-                                <a class="fa fa-fw fa-facebook text-center" href="<?= Url::toRoute(['site/arts','id'=>$item['id']]); ?>"></a>
-
+                                <a class="text-center" href="<?= Url::toRoute(['site/arts','id'=>$item['id']]); ?>">&#9658;</a>
                             </div>
                         </article>
                     </div>

@@ -14,8 +14,9 @@ $this->title = 'Галерея';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="n"> <ul>
-      <li><a href="index.html">главная</a></li> /
-      <li><a href="gallery.html">галерея</a></li> / <li><a href="gallery-1.html">альбом: призраки</a></li>
+        <li><a href="<?= Url::toRoute(['/']); ?>">главная</a></li> /
+        <li><a href="<?= Url::toRoute(['site/gallery']); ?>">галерея</a></li> /
+        <li><a href="<?= Url::toRoute(['site/arts','id'=>$item['id']]); ?>">альбом: призраки</a></li>
   </ul></div>
 
 
@@ -58,7 +59,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                     <div class="item">
                         <a data-fancybox="gallery" href="/img/<?= $item['src'] ?>">
-                            <img src="/img/<?= $item['src'] ?>" alt="1">
+                            <img src="/img/<?= $item['src'] ?>" alt="<?= $item['name'] ?>" title="<?= $item['name'] ?>">
                         </a>
                     </div>
 

@@ -59,7 +59,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="container about">
             <div class="row">
                 <div class="col-md-4"><img src="images/V17oeAkioFw.jpg" alt=""></div>
-                <div class="col-md-8 text-right">
+                <div class="col-md-8">
                     <p>Привет, меня зовут Ольга. Живу в Минске и стараюсь заниматься тем, что мне действительно нравится. В числе моих хобби выделю рисование, просмотр популярно-научных фильмов, путешествия и знакомство с разными культурами.</p>
                 </div>
             </div>
