@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="col-md-12 sections">
                 <h2>Разделы:</h2>
 
-<!--                --><?php //var_dump($blog) ?>
+
                 <?php foreach ($sections as $item): ?>
                     <a href="/blog/<?= $item['id'] ?>"><?= $item['name'] ?></a>
                 <?php endforeach; ?>

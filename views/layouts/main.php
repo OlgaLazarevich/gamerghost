@@ -11,6 +11,8 @@ use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 use yii\helpers\Url;
 
+
+
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -69,11 +71,11 @@ echo Nav::widget(array(
     'items' => array(
         '<li class="active text-center"><img src="/images/ghost.png" alt="logo"></li>',
 //        ['label' => Html::img('./images/ghost.png'), 'options' => ['class' => 'active text-center']],
-        array('label' => 'Главная', 'url' => array('/'), 'options' => array('class' => 'active')),
-        array('label' => 'Обо мне', 'url' => array('/about')),
-        array('label' => 'Галерея', 'url' => array('/gallery')),
-        array('label' => 'Блог', 'url' => array('/blog')),
-        array('label' => 'Контакты', 'url' => array('/contact')),
+        array('label' => 'Главная', 'url' => array('/'),  'active' => $this->context->route == 'site/index'),
+        array('label' => 'Обо мне', 'url' => array('/about'),  'active' => $this->context->route == 'site/about'),
+        array('label' => 'Галерея', 'url' => array('/gallery'),  'active' => $this->context->route == 'site/gallery'),
+        array('label' => 'Блог', 'url' => array('/blog'),  'active' => $this->context->route == 'site/blog'),
+        array('label' => 'Контакты', 'url' => array('/contact'),  'active' => $this->context->route == 'site/contact')
 
     ),
 //    'activeCssClass' => 'active',

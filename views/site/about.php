@@ -7,7 +7,15 @@ use mihaildev\ckeditor\CKEditor;
 use \yii\bootstrap\ActiveForm;
 
 
-$this->title = 'About';
+$this->title = 'Обо мне : gamerGhost art';
+$this->registerMetaTag([
+    'name' => 'description',
+    'content' => 'рисую комикс о призраке',
+]);
+$this->registerMetaTag([
+    'name' => 'keywords',
+    'content' => 'призрак, рисунки, комиксы, artwork, мемы, comics, ghost, призрак комиксы',
+]);
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <!--<div class="site-about">-->

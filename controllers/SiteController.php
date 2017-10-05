@@ -317,10 +317,6 @@ class SiteController extends Controller
             ->limit($pagination->limit)
             ->orderBy(['update_at' => SORT_DESC])
             ->all();
-
-
-
-
         return $this->render('arts', ['articles' => $articles, 'album' => $album, 'pagination' => $pagination]);
     }
 

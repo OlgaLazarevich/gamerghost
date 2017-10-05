@@ -14,6 +14,9 @@ use yii\widgets\LinkPager;
 $this->title = 'Галерея';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
+<style> .a {color: #cfaa34 !important;}</style>
+
 <div class="n"> <ul>
         <li><a href="<?= Url::toRoute(['/']); ?>">главная</a></li> /
         <li><a href="<?= Url::toRoute(['site/gallery']); ?>">галерея</a></li> /
@@ -26,11 +29,11 @@ $this->params['breadcrumbs'][] = $this->title;
  <div class="main-2 ">
  <div class="g-menu text-center">
     <ul>
-<!--        <li class="act"><a href="gallery-1.html">призраки</a></li>-->
-<!--        <li><a href="gallery-2.html">другие работы</a></li>-->
-<!--        <li><a href="gallery-3.html">фото</a></li>-->
+        <?php $request = Yii::$app->request;?>
+        <?php $id = $request->get('id'); ?>
         <?php foreach ($album as $item): ?>
-            <li><a href="<?= Url::toRoute(['site/arts','id'=>$item['id']]); ?>"><?= $item['name'] ?></a></li>
+            <?php $isActive = $id == $item['id']; ?>
+            <li><a <?= $isActive ? 'class="a"' : '';?> href="<?= Url::toRoute(['site/arts','id'=>$item['id']]); ?>"><?= $item['name'] ?></a></li>
          <?php endforeach; ?>
     </ul>
 </div>
