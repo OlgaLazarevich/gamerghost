@@ -11,7 +11,15 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 
 
-$this->title = 'Главная';
+$this->title = 'Главная : gamerGhost art';
+$this->registerMetaTag([
+    'name' => 'description',
+    'content' => 'рисую комикс о призраке',
+]);
+$this->registerMetaTag([
+    'name' => 'keywords',
+    'content' => 'призрак, рисунки, комиксы, artwork, мемы, comics, ghost, призрак комиксы',
+]);
 ?>
 
 <div class="top-link text-center">
@@ -104,7 +112,7 @@ $this->title = 'Главная';
                             </h2>
                             <div class="mc-content">
                                 <div class="img-container">
-                                    <img class="img-responsive" src="img/<?= $item['src'] ?>">
+                                    <img class="img-responsive" src="img/<?= $item['art_src'] ?>">
                                 </div>
                                 <div class="mc-description">
                                     <?= $item['description']; ?>

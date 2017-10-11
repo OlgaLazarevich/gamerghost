@@ -10,7 +10,15 @@ use yii\helpers\Url;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 
-$this->title = 'Галерея';
+$this->title = 'Галерея : gamerGhost art';
+$this->registerMetaTag([
+    'name' => 'description',
+    'content' => 'рисую комикс о призраке',
+]);
+$this->registerMetaTag([
+    'name' => 'keywords',
+    'content' => 'призрак, рисунки, комиксы, artwork, мемы, comics, ghost, призрак комиксы',
+]);
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="n"> <ul>
@@ -34,7 +42,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <div class="mc-content">
                                     <div class="img-container">
 
-                                        <img class="img-responsive" src="/img/<?= $item['src'] ?>">
+                                        <img class="img-responsive" src="/img/<?= $item['art_src'] ?>">
                                     </div>
                                     <div class="mc-description">
                                         <?= $item['description']; ?>

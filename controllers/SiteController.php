@@ -86,7 +86,7 @@ class SiteController extends Controller
         $album = (new \yii\db\Query())
             ->select('album.*, src')
             ->from('album')
-            ->leftJoin('art', 'album.art_id = art.id')
+            ->leftJoin('art', 'album.id = art.id')
             ->where(['album.visible' => 1])
             ->all();
 
@@ -241,7 +241,7 @@ class SiteController extends Controller
         $album = (new \yii\db\Query())
             ->select('album.*, src')
             ->from('album')
-            ->leftJoin('art', 'album.art_id = art.id')
+            ->leftJoin('art', 'album.id = art.id')
             ->where(['album.visible' => 1])
             ->all();
 
@@ -297,7 +297,7 @@ class SiteController extends Controller
         $album = (new \yii\db\Query())
             ->select('album.*, src')
             ->from('album')
-            ->leftJoin('art', 'album.art_id = art.id')
+            ->leftJoin('art', 'album.id = art.id')
             ->where(['album.visible' => 1])
             ->all();
 

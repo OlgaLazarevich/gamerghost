@@ -8,7 +8,15 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 
-$this->title = 'Контакты';
+$this->title = 'Контакты : gamerGhost art';
+$this->registerMetaTag([
+    'name' => 'description',
+    'content' => 'рисую комикс о призраке',
+]);
+$this->registerMetaTag([
+    'name' => 'keywords',
+    'content' => 'призрак, рисунки, комиксы, artwork, мемы, comics, ghost, призрак комиксы',
+]);
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="n"> <ul>

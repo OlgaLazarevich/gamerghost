@@ -9,8 +9,16 @@ use yii\helpers\Url;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 
-$this->title = 'Блог: статья';
+$this->title = 'Блог: статья : gamerGhost art';
 $this->params['breadcrumbs'][] = $this->title;
+$this->registerMetaTag([
+    'name' => 'description',
+    'content' => 'рисую комикс о призраке',
+]);
+$this->registerMetaTag([
+    'name' => 'keywords',
+    'content' => 'призрак, рисунки, комиксы, artwork, мемы, comics, ghost, призрак комиксы',
+]);
 ?>
 <div class="fon-blog">
 
